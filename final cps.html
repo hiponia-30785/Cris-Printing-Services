@@ -1,0 +1,546 @@
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Cris Printing Services</title>
+
+  <!-- Poppins Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:
+  linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e293b 40%,
+    #0f172a 100%
+  );
+  min-height:100vh;
+  padding:20px;
+}
+
+.app{
+  max-width:430px;
+  margin:auto;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(25px);
+  -webkit-backdrop-filter:blur(25px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+}
+
+/* HEADER */
+
+.top-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px;
+  color:white;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-area img{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid rgba(255,255,255,.2);
+}
+
+.logo-area h2{
+  font-size:18px;
+  font-weight:700;
+}
+
+.logo-area p{
+  font-size:12px;
+  opacity:.8;
+}
+
+.top-bar i{
+  font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+  padding:20px 25px 30px;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{
+  font-size:34px;
+  line-height:1.1;
+  margin-bottom:10px;
+  font-weight:800;
+}
+
+.hero-subtitle{
+  font-size:16px;
+  opacity:.85;
+  margin-bottom:12px;
+}
+
+.hero p{
+  font-size:14px;
+  line-height:1.7;
+  opacity:.9;
+  max-width:320px;
+  margin:auto;
+}
+
+.hero img{
+  width:100%;
+  max-width:280px;
+  display:block;
+  margin:25px auto 0;
+}
+
+/* SECTION TITLES */
+
+.services h2,
+.gallery h2,
+.order h2,
+.reviews h2,
+.contact h2{
+  color:white;
+  margin-bottom:18px;
+  font-size:22px;
+}
+
+/* SERVICES */
+
+.services{
+  padding:20px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.service-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  color:white;
+  transition:.3s;
+}
+
+.service-card:hover{
+  transform:translateY(-4px);
+}
+
+.service-card i{
+  font-size:24px;
+  margin-bottom:10px;
+  color:#60a5fa;
+}
+
+/* GALLERY */
+
+.gallery{
+  padding:20px;
+}
+
+.gallery-scroll{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+
+.gallery-card{
+  min-width:160px;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.gallery-card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
+
+.gallery-card p{
+  color:white;
+  text-align:center;
+  padding:12px;
+}
+
+/* ORDER */
+
+.order{
+  padding:20px;
+}
+
+.messenger-order{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:25px;
+  text-align:center;
+  color:white;
+}
+
+.messenger-order p{
+  margin-bottom:20px;
+  line-height:1.7;
+}
+
+.messenger-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:#0084ff;
+  color:white;
+  text-decoration:none;
+  padding:15px 24px;
+  border-radius:50px;
+  font-weight:600;
+}
+
+.messenger-btn i{
+  font-size:22px;
+}
+
+/* REVIEWS */
+
+.reviews{
+  padding:20px;
+}
+
+.review-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:20px;
+  color:white;
+  margin-bottom:15px;
+}
+
+/* CONTACT */
+
+.contact{
+  padding:20px 20px 100px;
+}
+
+.contact-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  padding:20px;
+  color:white;
+}
+
+.contact-card p{
+  margin-bottom:15px;
+  line-height:1.7;
+}
+
+/* FLOATING MESSENGER */
+
+.floating-chat{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  width:65px;
+  height:65px;
+  background:#0084ff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-decoration:none;
+  font-size:28px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
+  z-index:999;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .service-grid{
+    gap:12px;
+  }
+
+} 
+</style>
+</head>
+<body>
+
+  <a
+href="https://www.facebook.com/profile.php?id=61577284868758"
+target="_blank"
+class="floating-chat">
+
+<i class="fa-brands fa-facebook-messenger"></i>
+
+</a>
+
+  <div class="app">
+
+    <!-- HEADER -->
+
+    <header>
+
+      <div class="top-bar">
+
+        <div class="logo-area">
+
+          <img src="Cris Printing Services Logo.png" alt="">
+
+          <div>
+            <h2>Cris Printing Services</h2>
+            <p>Creative Printing Shop</p>
+          </div>
+
+        </div>
+
+        <i class="fa-solid fa-bell"></i>
+
+      </div>
+
+    </header>
+
+    <!-- HERO -->
+<section class="hero">
+
+  <div class="hero-text">
+
+    <h1>Color Your Ideas Into Prints</h1>
+
+    <div class="hero-subtitle">
+      Trusted Printing Partner in Baranggay Coloong, Valenzuela City
+    </div>
+
+    <p>
+      High-quality printing solutions for students, businesses,
+      organizations, and special events. Fast turnaround,
+      affordable pricing, and professional results every time.
+    </p>
+
+  </div>
+
+  <img src="cps cover.png" alt="Printing Services">
+
+</section>
+    <!-- SERVICES -->
+
+    <section class="services">
+
+      <h2>Services</h2>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <i class="fa-solid fa-print"></i>
+          <p>Printing</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-copy"></i>
+          <p>Xerox</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-id-card"></i>
+          <p>Rush ID</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-image"></i>
+          <p>Photo Print</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-tag"></i>
+          <p>Stickers</p>
+        </div>
+
+        <div class="service-card">
+          <i class="fa-solid fa-circle"></i>
+          <p>Button Pins</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PRODUCT GALLERY -->
+
+    <section class="gallery">
+
+      <div class="section-title">
+        <h2>Sample Works</h2>
+      </div>
+
+      <div class="gallery-scroll">
+
+        <div class="gallery-card">
+          <img src="pin.png">
+          <p>Button Pins</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="sticker.png">
+          <p>Stickers</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="id.png">
+          <p>Rush ID</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="ref.png">
+          <p>Ref Magnets</p>
+        </div>
+
+        <div class="gallery-card">
+          <img src="head.png">
+          <p>Customized Headdress</p>
+        </div>
+
+      </div>
+
+    </section>
+
+<!-- ORDER VIA MESSENGER -->
+
+<section class="order">
+
+  <h2>Place Your Order</h2>
+
+  <div class="messenger-order">
+
+    <p>
+      Send us your order details, photos, and printable files directly through Facebook Messenger.
+    </p>
+
+    <a 
+      href="https://www.facebook.com/profile.php?id=61577284868758"
+      target="_blank"
+      class="messenger-btn">
+
+      <i class="fa-brands fa-facebook-messenger"></i>
+
+      Order via Messenger
+
+    </a>
+
+  </div>
+
+</section>
+
+    <!-- REVIEWS -->
+
+    <section class="reviews">
+
+      <h2>Customer Reviews</h2>
+
+      <div class="review-card">
+
+        <h3>⭐⭐⭐⭐⭐</h3>
+
+        <p>
+          Super ganda ng mga layout, very detailed and high-quality prints!
+        </p>
+
+        <span>- Angela</span>
+
+      </div>
+
+      <div class="review-card">
+
+        <h3>⭐⭐⭐⭐⭐</h3>
+
+        <p>
+          Affordable and very accommodating.
+        </p>
+
+        <span>- Joshua</span>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact">
+
+      <h2>Reach Out</h2>
+
+      <div class="contact-card">
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          547 Palomares St., Coloong I, Valenzuela City
+        </p>
+
+        <p>
+          <i class="fa-brands fa-facebook"></i>
+          Cris Printing Services
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          crisprintingservices25@gmail.com
+        </p>
+
+      </div>
+
+    </section>
+
+   <a
+href="https://www.facebook.com/profile.php?id=61577284868758"
+target="_blank"
+class="floating-chat">
+
+<i class="fa-brands fa-facebook-messenger"></i>
+
+</a>
+
+</body>
+</html>
